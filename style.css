@@ -1,0 +1,208 @@
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Hlavní kontejner úvodní sekce */
+.main-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* ZMĚNA: Přesune obsah doleva namísto středu */
+    background-color: #1a1a1a;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    scroll-snap-align: start;
+}
+
+/* Obal pro texty, štítek a tlačítko */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ZMĚNA: Drží všechno zarovnané vlevo */
+    text-align: left; /* ZMĚNA: Text bude začínat u levého okraje */
+    gap: 20px;
+    padding: 0 50px; /* Větší odsazení zleva, ať to není nalepené na hraně monitoru */
+    max-width: 800px;
+}
+
+/* Malý žlutý štítek nad nadpisem */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* Svítivá tečka ve štítku */
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #d4ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(212, 255, 0, 0.6);
+}
+
+.logo-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* TOTO CHYběLO: Roztáhne hlavičku přes celou šířku */
+    padding: 30px 50px; /* Větší odsazení po stranách, ať logo není nalepené na okraji */
+    box-sizing: border-box; /* Zajistí, že padding nezvětší šířku přes 100% */
+}
+
+.menu {
+    display: flex;
+    text-decoration: none;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none; /* Tady to teprve zabere a smaže podtržení */
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Zaručí plynulou změnu barvy, viz další krok */
+}
+
+.menu a:hover {
+    color: #ff6b6b;
+}
+
+/* Tlačítka "Pozvat Akcent" (už se nebude roztahovat) */
+.invite-button {
+    background-color: #ff6b6b;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.invite-button:hover {
+    background-color: #fa5252;
+}
+
+/* Hlavní nadpis */
+.main-title {
+    text-align: center;
+    font-size: 4.5rem;
+    color: white;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Podnadpis pod hlavním nadpisem */
+.second-title {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin: 0;
+    max-width: 650px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Nastylování spodního odkazu */
+.explore-button {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 40px; /* Ať neleží úplně na hraně monitoru */
+    font-size: 0.9rem;
+    text-transform: uppercase; /* Všechna písmena velká */
+    letter-spacing: 2px; /* Roztažení písmen od sebe */
+    transition: color 0.3s;
+}
+
+.explore-button:hover {
+    color: #ff6b6b;
+}
+
+.about-section {
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh; /* TOTO PŘIDEJ: Zajistí, že sekce vyplní celou obrazovku */
+    scroll-snap-align: start;
+}
+
+.about-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0; /* Přidá prostor nad a pod obrázkem */
+}
+
+.about-image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6b6b; /* Červená barva pro badge */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.about-text-container {
+    max-width: 800px; /* Omezí šířku textu pro lepší čitelnost */
+    margin: 0 auto; /* Vycentruje textový blok */
+    padding: 0 20px; /* Přidá trochu prostoru z boku na menších obrazovkách */
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333; /* Tmavě šedá barva textu pro lepší kontrast */
+}
+
+.counter-data {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.counter-item {
+    text-align: center;
+}
+
+.counter-item h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.counter-item p {
+    font-size: 1rem;
+    margin: 0;
+}
